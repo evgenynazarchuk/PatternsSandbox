@@ -25,7 +25,7 @@ namespace PageObject
 
         public static PageBuilder CreatePage() => new PageBuilder();
 
-        public HomePage OpenHomePage
+        public HomePage Load
         {
             get => new HomePage();
         }

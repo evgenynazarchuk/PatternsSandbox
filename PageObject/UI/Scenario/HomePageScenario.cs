@@ -17,7 +17,7 @@ namespace PageObject
                 .Build();
 
             var scenario = page
-                .OpenHomePage
+                .Load
                 .SetLogin("")
                 .SetPassword("")
                 .Auth;
