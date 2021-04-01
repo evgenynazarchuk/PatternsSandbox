@@ -10,7 +10,7 @@ namespace PageObject
     {
         public void CallMeBackTest()
         {
-            var page = Page.CreatePage()
+            var page = new PageBuilder()
                 .SetBrowser(BrowserType.Firefox)
                 .SetUrl("")
                 .SetPort(80)
