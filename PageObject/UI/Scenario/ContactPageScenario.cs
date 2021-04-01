@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PageObject
 {
-    public class ContactPageTest
+    public class ContactPageScenario
     {
         public void CallMeBackTest()
         {

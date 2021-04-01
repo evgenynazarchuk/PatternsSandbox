@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PageObject.UI_Test.PageObject.Selectors
+namespace PageObject
 {
     public static class HomePageSelectors
     {

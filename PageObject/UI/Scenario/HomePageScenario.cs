@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PageObject
 {
-    public class HomePageTest
+    public class HomePageScenario
     {
         public void Login()
         {
