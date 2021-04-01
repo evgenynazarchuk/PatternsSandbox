@@ -1,0 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PageObject
+{
+    public class HomePageTest
+    {
+        public void Login()
+        {
+            var page = Page.CreatePage()
+                .SetBrowser(BrowserType.Chrome)
+                .SetUrl("")
+                .SetPort(80)
+                .Build();
+
+            var scenario = page
+                .OpenHomePage
+                .SetLogin("")
+                .SetPassword("")
+                .Auth;
+        }
+    }
+}
