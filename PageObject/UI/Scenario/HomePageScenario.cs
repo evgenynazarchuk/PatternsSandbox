@@ -13,7 +13,6 @@ namespace PageObject
             var page = Page.CreatePage()
                 .SetBrowser(BrowserType.Chrome)
                 .SetUrl("")
-                .SetPort(80)
                 .Build();
 
             var scenario = page

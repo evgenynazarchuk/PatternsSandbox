@@ -7,7 +7,7 @@
             var page = new PageBuilder()
                 .SetBrowser(BrowserType.Firefox)
                 .SetUrl("")
-                .SetPort(80)
+                .SetPort(8080)
                 .Build();
 
             var scenario = page
