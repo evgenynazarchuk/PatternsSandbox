@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PageObject
+﻿namespace PageObject
 {
     public class ContactPageScenario
     {
-        public void CallMeBackTest()
+        public void CallMeBack()
         {
             var page = new PageBuilder()
                 .SetBrowser(BrowserType.Firefox)
