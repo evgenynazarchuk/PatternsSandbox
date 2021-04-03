@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentBuilderPattern", "FluentBuilder\FluentBuilderPattern.csproj", "{E4EBEE6E-80A8-401F-9D87-663823E80BA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentBuilderPattern", "FluentBuilderPattern\FluentBuilderPattern.csproj", "{E4EBEE6E-80A8-401F-9D87-663823E80BA2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PageObjectModelPattern", "PageObject\PageObjectModelPattern.csproj", "{31CA569C-7C0D-4054-9B6C-78DFF50C2BA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PageObjectModelPattern", "PageObjectModelPattern\PageObjectModelPattern.csproj", "{31CA569C-7C0D-4054-9B6C-78DFF50C2BA1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonPattern", "SingletonPattern\SingletonPattern.csproj", "{48CA8F65-18CF-4456-9332-9E42329EDBEC}"
 EndProject
