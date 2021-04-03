@@ -1,4 +1,4 @@
-﻿namespace PageObject
+﻿namespace PageObjectModelPattern
 {
     public class ContactPageScenario
     {

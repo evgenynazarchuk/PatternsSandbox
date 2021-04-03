@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PageObject
+namespace PageObjectModelPattern
 {
     class Program
     {

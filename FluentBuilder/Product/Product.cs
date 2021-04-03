@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace FluentBuilder
+namespace FluentBuilderPattern
 {
     public class Product
     {

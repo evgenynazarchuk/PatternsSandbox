@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FluentBuilder
+namespace FluentBuilderPattern
 {
     public class ProductBuilder
     {
