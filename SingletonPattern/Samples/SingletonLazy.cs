@@ -8,7 +8,7 @@ namespace SingletonPattern
 {
     public class SingletonLazy
     {
-        private static readonly Lazy<SingletonLazy> _instance = new Lazy<SingletonLazy>();
+        private static readonly Lazy<SingletonLazy> _instance = new Lazy<SingletonLazy>(() => new SingletonLazy());
         public Guid Id { get; private set; }
 
         private SingletonLazy() => this.Id = Guid.NewGuid();
