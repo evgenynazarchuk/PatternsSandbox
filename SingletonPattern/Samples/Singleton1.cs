@@ -1,20 +1,20 @@
 ﻿namespace SingletonPattern
 {
-    public class Company
+    public class Singleton1
     {
-        private static Company _instance;
+        private static Singleton1 _instance;
         public string Name { get; private set; }
 
-        private Company(string name) 
+        private Singleton1(string name) 
         {
             this.Name = name;
         }
 
-        public static Company GetInstance(string name)
+        public static Singleton1 GetInstance(string name)
         {
             if (_instance is null)
             {
-                _instance = new Company(name);
+                _instance = new Singleton1(name);
             }
             return _instance;
         }

@@ -1,17 +1,17 @@
 ﻿namespace SingletonPattern
 {
-    public class OS
+    public class Singleton2
     {
-        private static OS _instance;
+        private static Singleton2 _instance;
         private static object _lock = new object();
         public string Name { get; private set; }
 
-        private OS(string name)
+        private Singleton2(string name)
         {
             this.Name = name;
         }
 
-        public static OS GetInstance(string name)
+        public static Singleton2 GetInstance(string name)
         {
             if (_instance is null)
             {
@@ -19,7 +19,7 @@
                 {
                     if (_instance is null)
                     {
-                        _instance = new OS(name);
+                        _instance = new Singleton2(name);
                     }
                 }
             }
