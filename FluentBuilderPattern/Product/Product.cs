@@ -4,16 +4,12 @@ namespace FluentBuilderPattern
 {
     public class Product
     {
-        // may be implement Inject("") ?
         public string Name { get; set; }
         public string Manufacturer { get; set; }
-        // may be implement Inject(7.5f) ?
         public float Net { get; set; }
         public float Gross { get; set; }
         public decimal Price { get; set; }
         public bool InStock { get; set; }
-
-        // public Product() { }
 
         public Product(
             string name = ""
