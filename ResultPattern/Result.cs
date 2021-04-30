@@ -22,7 +22,6 @@ namespace ResultPattern
         public Result(string errorMessage)
         {
             this.ErrorMessage.Add(errorMessage);
-            this.Exception = new Exception(errorMessage);
         }
 
         public Result(Exception exception)
@@ -39,11 +38,15 @@ namespace ResultPattern
 
         public Result(List<string> errorMessages)
         {
-            var exception = new Exception();
-            exception.Data.Add("errors", errorMessages);
-
             this.ErrorMessage.AddRange(errorMessages);
-            this.Exception = exception;
+        }
+    }
+
+    public static class ResultExtension
+    {
+        public static string JoinErrorMessages<TResult>(this Result<TResult> result, string separator = " ")
+        {
+            return string.Join(separator, result.ErrorMessage);
         }
     }
 }
