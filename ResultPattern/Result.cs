@@ -6,15 +6,14 @@ namespace ResultPattern
     {
         public readonly TResult Value = default;
         public readonly Exception Exception = default;
-        public readonly string ErrorMessage;
-        
+        public readonly string ErrorMessage = string.Empty;
+
         public bool Success { get => _success; set { } }
         public bool Failure { get => !_success; set { } }
         private readonly bool _success = false;
 
         public Result(TResult value)
         {
-            this.ErrorMessage = string.Empty;
             this.Value = value;
             this._success = true;
         }
