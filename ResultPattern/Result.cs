@@ -41,11 +41,18 @@ namespace ResultPattern
             this.ErrorMessage.AddRange(errorMessages);
         }
 
+        public Result(List<string> errorMessages, Exception exception)
+        {
+            this.ErrorMessage.AddRange(errorMessages);
+            this.Exception = exception;
+        }
+
         public static Result<TResult> Create(TResult value) => new(value);
         public static Result<TResult> Create(string errorMessage) => new(errorMessage);
         public static Result<TResult> Create(List<string> errorMessages) => new(errorMessages);
         public static Result<TResult> Create(Exception exception) => new(exception);
         public static Result<TResult> Create(string errorMessage, Exception exception) => new(errorMessage, exception);
+        public static Result<TResult> Create(List<string> errorMessages, Exception exception) => new(errorMessages, exception);
     }
 
     public static class ResultExtension

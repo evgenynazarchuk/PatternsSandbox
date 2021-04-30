@@ -75,12 +75,12 @@ namespace ResultPattern
 
         public static Result<int> GetData1()
         {
-            return new Result<int>(42);
+            return Result<int>.Create(42);
         }
 
         public static Result<int> GetData2()
         {
-            return new Result<int>("Int Error");
+            return Result<int>.Create("Int Error");
         }
 
         public static Result<int> GetData3()
