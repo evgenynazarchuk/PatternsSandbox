@@ -8,10 +8,10 @@ namespace ResultPattern
         public string ErrorMessage { get; set; }
         public Exception Exception { get; set; } = default;
 
-        public bool Success { get => _success; set => _success = value; }
-        public bool Failure { get => !_success; set => _success = !value; }
+        public bool Success { get => _success; set { } }
+        public bool Failure { get => !_success; set { } }
 
-        private bool _success;
+        private readonly bool _success;
 
         public Result(TResult value)
         {
