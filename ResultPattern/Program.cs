@@ -19,7 +19,7 @@ namespace ResultPattern
             if (result1.Success)
             {
                 Console.WriteLine($"{category1}:" + result1.Value);
-                Console.WriteLine($"{category1}:" + result1.JoinErrorMessages()); //
+                //Console.WriteLine($"{category1}:" + result1.JoinErrorMessages()); // throw new ErrorMessageNotFOundResultException
             }
             else if(result1.Failure)
             {
@@ -35,7 +35,7 @@ namespace ResultPattern
             else if (result2.Failure)
             {
                 Console.WriteLine($"{category2}:" + result2.JoinErrorMessages());
-                Console.WriteLine($"{category2}:" + result2.Value); // int -> 0
+                //Console.WriteLine($"{category2}:" + result2.Value); // throw new ValueNotFoundResultException
             }
 
             //

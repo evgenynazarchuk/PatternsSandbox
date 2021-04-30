@@ -5,11 +5,27 @@ namespace ResultPattern
 {
     public sealed class Result<TResult>
     {
-        public readonly TResult Value = default;
-        public readonly List<string> ErrorMessage = new();
-        
-        public bool Success { get => ErrorMessage.Count == 0; }
-        public bool Failure { get => ErrorMessage.Count != 0; }
+        public TResult Value
+        {
+            init => _value = value;
+            get => _errorMessage is not null
+                ? throw new ValueNotFoundResultException()
+                : _value;
+        }
+
+        public List<string> ErrorMessage
+        {
+            init => _errorMessage = value;
+            get => _errorMessage is null
+                ? throw new ErrorMessageNotFoundResultException()
+                : _errorMessage;
+        }
+
+        private readonly List<string> _errorMessage = null;
+        private readonly TResult _value;
+
+        public bool Success { get => _errorMessage is null; }
+        public bool Failure { get => _errorMessage is not null; }
 
         public Result(TResult value)
         {
@@ -18,12 +34,12 @@ namespace ResultPattern
 
         public Result(string errorMessage)
         {
-            this.ErrorMessage.Add(errorMessage);
+            this.ErrorMessage = new List<string>() { errorMessage };
         }
 
         public Result(List<string> errorMessages)
         {
-            this.ErrorMessage.AddRange(errorMessages);
+            this.ErrorMessage = errorMessages;
         }
 
         public static Result<TResult> Create(TResult value) => new(value);
@@ -39,10 +55,13 @@ namespace ResultPattern
         }
     }
 
-    public class ResultException : Exception
+    public class ErrorMessageNotFoundResultException : ApplicationException
     {
-        public ResultException()
-        {
-        }
+        public ErrorMessageNotFoundResultException() { }
+    }
+
+    public class ValueNotFoundResultException : ApplicationException
+    {
+        public ValueNotFoundResultException() { }
     }
 }
