@@ -8,17 +8,17 @@ namespace ResultPattern
         public TResult Value
         {
             init => _value = value;
-            get => _errorMessage is not null
-                ? throw new ValueNotFoundResultException()
-                : _value;
+            get => _errorMessage is null
+                ? _value
+                : throw new ValueNotFoundResultException();
         }
 
         public List<string> ErrorMessage
         {
             init => _errorMessage = value;
-            get => _errorMessage is null
-                ? throw new ErrorMessageNotFoundResultException()
-                : _errorMessage;
+            get => _errorMessage is not null
+                ? _errorMessage
+                : throw new ErrorMessageNotFoundResultException();
         }
 
         private readonly List<string> _errorMessage = null;
