@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace ResultPattern
 {
@@ -8,8 +7,8 @@ namespace ResultPattern
         public readonly TResult Value = default;
         public readonly List<string> ErrorMessage = new();
 
-        public bool Success { get => ErrorMessage.Count == 0 ? true : false; set { } }
-        public bool Failure { get => ErrorMessage.Count == 0 ? false : true; set { } }
+        public bool Success { get => ErrorMessage.Count == 0; set { } }
+        public bool Failure { get => ErrorMessage.Count != 0; set { } }
 
         public Result(TResult value)
         {
