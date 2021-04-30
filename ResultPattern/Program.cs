@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ResultPattern
 {
@@ -8,26 +9,35 @@ namespace ResultPattern
         {
             //
             Result<int> result1 = GetData1();
-            Result<int> result2 = GetData2();
-
-            //
             if (result1.Success)
             {
                 Console.WriteLine(result1.Value);
             }
             else if(result1.Failure)
             {
-                Console.WriteLine(result1.ErrorMessage);
+                Console.WriteLine(string.Join("", result1.ErrorMessage));
             }
 
             //
+            Result<int> result2 = GetData2();
             if (result2.Success)
             {
                 Console.WriteLine(result2.Value);
             }
             else if (result2.Failure)
             {
-                Console.WriteLine(result2.ErrorMessage);
+                Console.WriteLine(string.Join("", result2.ErrorMessage));
+            }
+
+            //
+            Result<int> result3 = GetData3();
+            if (result3.Success)
+            {
+                Console.WriteLine(result3.Value);
+            }
+            else if (result3.Failure)
+            {
+                Console.WriteLine(string.Join("\n", result3.ErrorMessage));
             }
         }
 
@@ -39,6 +49,11 @@ namespace ResultPattern
         public static Result<int> GetData2()
         {
             return new Result<int>("Answer");
+        }
+
+        public static Result<int> GetData3()
+        {
+            return new Result<int>(new List<string> { "Answer 1", "Answer 2" });
         }
     }
 }
