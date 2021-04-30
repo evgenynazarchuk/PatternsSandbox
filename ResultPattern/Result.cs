@@ -4,19 +4,17 @@ namespace ResultPattern
 {
     public class Result<TResult>
     {
-        public TResult Value { get; set; }
-        public string ErrorMessage { get; set; }
-        public Exception Exception { get; set; } = default;
-
+        public readonly TResult Value = default;
+        public readonly Exception Exception = default;
+        public readonly string ErrorMessage;
+        
         public bool Success { get => _success; set { } }
         public bool Failure { get => !_success; set { } }
-
-        private readonly bool _success;
+        private readonly bool _success = false;
 
         public Result(TResult value)
         {
             this.ErrorMessage = string.Empty;
-            this.Exception = default;
             this.Value = value;
             this._success = true;
         }
@@ -25,21 +23,18 @@ namespace ResultPattern
         {
             this.ErrorMessage = errorMessage;
             this.Exception = new Exception(errorMessage);
-            this._success = false;
         }
 
         public Result(Exception exception)
         {
             this.ErrorMessage = exception.Message;
             this.Exception = exception;
-            this._success = false;
         }
 
         public Result(string errorMessage, Exception exception)
         {
             this.ErrorMessage = errorMessage;
             this.Exception = exception;
-            this._success = false;
         }
     }
 }
