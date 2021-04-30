@@ -8,14 +8,12 @@ namespace ResultPattern
         public readonly TResult Value = default;
         public readonly List<string> ErrorMessage = new();
         
-        public bool Success { get => _success; }
-        public bool Failure { get => !_success; }
-        public readonly bool _success = false;
+        public bool Success { get => ErrorMessage.Count == 0; }
+        public bool Failure { get => ErrorMessage.Count != 0; }
 
         public Result(TResult value)
         {
             this.Value = value;
-            this._success = true;
         }
 
         public Result(string errorMessage)
