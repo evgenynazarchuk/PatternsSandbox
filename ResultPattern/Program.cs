@@ -19,7 +19,7 @@ namespace ResultPattern
             if (result1.Success)
             {
                 Console.WriteLine($"{category1}:" + result1.Value);
-                Console.WriteLine($"{category1}:" + result1.JoinErrorMessages()); // nothing\n
+                Console.WriteLine($"{category1}:" + result1.JoinErrorMessages()); //
             }
             else if(result1.Failure)
             {
