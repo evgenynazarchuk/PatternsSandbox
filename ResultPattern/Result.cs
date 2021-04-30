@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ResultPattern
 {
-    public class Result<TResult>
+    public sealed class Result<TResult>
     {
-        public readonly TResult Value = default; // what is !
+        public readonly TResult Value = default;
         public readonly Exception Exception = default;
         public readonly List<string> ErrorMessage = new();
 
