@@ -20,16 +20,19 @@ namespace ResponsibilityChain
 
     public abstract class StatusHandler : IDocumentStatusHandler
     {
-        protected DocumentStatus _documentStatus { get; set; }
+        protected DocumentStatus _statusHandler { get; set; }
 
-        public StatusHandler(DocumentStatus documentStatus) => _documentStatus = documentStatus;
+        public StatusHandler(DocumentStatus documentStatus) => _statusHandler = documentStatus;
 
         // реализация интерфейса
         // если включен флаг статуса, то выполнить действия для этого статуса
         // скорее всего тут нужно только выключать пройденный флаг, 
         // будут выполнять собственный handler для статуса
+        // пример:
+        // 100 & 101 = 1
+        // 100 & 011 = 0
         public bool IsRequiredStatus(IDocumentRequiredStatus document)
-            => _documentStatus == (document.RequiredStatuses & _documentStatus);
+            => _statusHandler == (_statusHandler & document.RequiredStatuses);
 
         // выключить флаг
         // пример
@@ -37,7 +40,7 @@ namespace ResponsibilityChain
         // флаг текущего статуса: 010
         // 110 & ~(010) = 110 & 101 = 100
         public void FinishStatus(IDocumentRequiredStatus document) 
-            => document.RequiredStatuses = document.RequiredStatuses & ~_documentStatus;
+            => document.RequiredStatuses = document.RequiredStatuses & ~_statusHandler;
 
         public abstract void Invoke(Document document);
     }
