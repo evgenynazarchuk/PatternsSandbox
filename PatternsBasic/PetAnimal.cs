@@ -6,7 +6,7 @@
         public PetCharacteristics PetCharacteristics { get; private set; }
         public PetBreed PetBreed { get; private set; }
 
-        public PetAnimal(string name = "Unknow", 
+        public PetAnimal(string name = "Unknow",
             PetBreed petBreed = null,
             PetCharacteristics petCharacteristics = null)
         {

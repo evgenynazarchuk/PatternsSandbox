@@ -21,7 +21,7 @@ namespace ResultPattern
                 Console.WriteLine($"{category1}:" + result1.Value);
                 //Console.WriteLine($"{category1}:" + result1.JoinErrorMessages()); // throw new ErrorMessageNotFOundResultException
             }
-            else if(result1.Failure)
+            else if (result1.Failure)
             {
                 Console.WriteLine($"{category1}:" + result1.JoinErrorMessages());
             }

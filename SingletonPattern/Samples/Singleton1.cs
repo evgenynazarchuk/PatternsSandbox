@@ -5,7 +5,7 @@
         private static Singleton1 _instance;
         public string Name { get; private set; }
 
-        private Singleton1(string name) 
+        private Singleton1(string name)
         {
             this.Name = name;
         }

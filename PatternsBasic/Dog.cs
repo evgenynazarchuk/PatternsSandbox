@@ -4,8 +4,8 @@ namespace PatternsBasic
 {
     public class Dog : PetAnimal
     {
-        public Dog(string name, 
-            PetBreed petBreed = null, 
+        public Dog(string name,
+            PetBreed petBreed = null,
             PetCharacteristics petCharacteristics = null)
             : base(name, petBreed, petCharacteristics)
         { }

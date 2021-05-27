@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using System;
+﻿using System;
+using System.Collections.Generic;
 
 namespace PatternsBasic
 {
@@ -9,7 +9,7 @@ namespace PatternsBasic
         public readonly string FullName;
         public readonly List<PetAnimal> Pets;
 
-        public PetOwner(string fullName) 
+        public PetOwner(string fullName)
         {
             Id = Guid.NewGuid();
             FullName = fullName;
