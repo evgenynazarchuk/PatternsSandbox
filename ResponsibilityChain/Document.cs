@@ -64,12 +64,23 @@ namespace ResponsibilityChain
     #endregion
 
     #region status_handler
+    // а можно ли сделать метод Invoke статическим и использовать декоратор?
+    // является ли использование статических методов более быстрым решением?
     public class NoneStatus : StatusHandler
     {
         public NoneStatus() : base(DocumentStatus.None) { }
         public override void Invoke(Document document)
         {
             Console.WriteLine($"Status: {nameof(NoneStatus)}");
+        }
+
+        // lazy without singleton class???
+        // стоит ли использовать nested class???
+        public static IDocumentStatusHandler Instance => NoneStatusSingleton.Instance;
+        private static class NoneStatusSingleton
+        {
+            private static Lazy<StatusHandler> _lazy = new(() => new NoneStatus());
+            public static IDocumentStatusHandler Instance => new DocumentStatusDecorator(_lazy.Value);
         }
     }
 
