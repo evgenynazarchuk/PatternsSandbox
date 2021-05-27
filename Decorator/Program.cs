@@ -1,12 +1,11 @@
-﻿using System;
-
-namespace Decorator
+﻿namespace Decorator
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+            var yellowDoubleBeep = new YellowMessage(new DoubleBeepMessage("Hello world"));
+            yellowDoubleBeep.PrintMessage();
         }
     }
 }
