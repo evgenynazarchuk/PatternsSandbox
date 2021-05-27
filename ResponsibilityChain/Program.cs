@@ -38,11 +38,11 @@ namespace ResponsibilityChain
             foreach (var document in documents)
             {
                 Console.WriteLine($"Document name: {document.DocumentName}");
-                draftService.Service(document);
-                onManagerApprovalService.Service(document);
-                onFinApprovalService.Service(document);
-                onDicrectorApprovalService.Service(document);
-                onCompletedService.Service(document);
+                draftService.Invoke(document);
+                onManagerApprovalService.Invoke(document);
+                onFinApprovalService.Invoke(document);
+                onDicrectorApprovalService.Invoke(document);
+                onCompletedService.Invoke(document);
             }
         }
     }
